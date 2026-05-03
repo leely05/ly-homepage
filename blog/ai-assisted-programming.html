@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI辅助编程实践与思考 - 李翊的技术博客</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* 博客页面专属样式 */
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .article-content {
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            margin: 2rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: var(--code-bg);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .article-content code {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            background: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--primary-dark);
+        }
+
+        .article-content pre {
+            margin: 1.5rem 0;
+            padding: 1.25rem;
+            background: #1e293b;
+            border-radius: 12px;
+            overflow-x: auto;
+        }
+
+        .article-content pre code {
+            background: none;
+            padding: 0;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 12px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .highlight-box.success {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-color: #a7f3d0;
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-color: #fcd34d;
+        }
+
+        .experience-card {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .experience-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .experience-card .lesson {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .experience-card .lesson strong {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .article-title {
+                font-size: 1.75rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="../index.html" class="nav-logo">李翊</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">关于</a></li>
+                <li><a href="../index.html#interests">方向</a></li>
+                <li><a href="../index.html#projects">项目</a></li>
+                <li><a href="../index.html#blog">博客</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <a href="../index.html" class="back-link">← 返回主页</a>
+
+        <article>
+            <header class="article-header">
+                <h1 class="article-title">AI辅助编程实践与思考</h1>
+                <div class="article-meta">
+                    <span>📅 2026年5月3日</span>
+                    <span>📚 AI · 编程实践</span>
+                    <span>⏱ 约15分钟阅读</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h2>引言：重新认识AI在编程中的角色</h2>
+                <p>
+                    在过去一年的学习和课程作业实践中，我逐渐意识到一个重要的认知转变：<strong>AI不是来替代程序员的，而是来改变程序员工作方式的工具</strong>。作为一个数学科学学院的学生，我的研究方向天然需要大量的数值计算和算法实现，在这个过程中，AI帮我解决了许多重复性工作，但同时也暴露出它作为"起搏器"而非"自动驾驶"的本质。
+                </p>
+                <p>
+                    这篇文章基于我在网格参数化、路径追踪渲染器、龙贝格积分算法等课程作业中的经验，谈谈我对AI辅助编程的理解和反思。
+                </p>
+
+                <h2>一、AI辅助编程的工作流</h2>
+                <p>
+                    经过多次实践，我逐渐摸索出一套与AI协作的流程，它比"prompt工程师"模式更有体系：
+                </p>
+                
+                <h3>1. 撰写项目规范文档</h3>
+                <p>
+                    在开始任何有意义的项目之前，我会先创建 <code>CLAUDE.md</code> 或 <code>AGENTS.md</code> 文件。这不是简单的README，而是一份详细的"宪法"：
+                </p>
+                <ul>
+                    <li><strong>项目背景与目标</strong>：明确要解决什么问题，达到什么效果</li>
+                    <li><strong>技术栈约束</strong>：指定语言版本、依赖库、编码规范</li>
+                    <li><strong>文件结构约定</strong>：如何组织代码，哪些是核心模块</li>
+                    <li><strong>输出格式要求</strong>：日志格式、错误处理方式、返回值规范</li>
+                </ul>
+                <p>
+                    这一点至关重要。AI在没有上下文的情况下很容易"放飞自我"，写出风格不一致甚至架构混乱的代码。有了规范文档，至少有据可依。
+                </p>
+
+                <h3>2. 与AI讨论实现计划</h3>
+                <p>
+                    不要急于让AI写代码。在动手之前，我会先和AI讨论方案可行性：
+                </p>
+                <ul>
+                    <li>算法的数学原理是否正确？</li>
+                    <li>选择的数据结构是否合适？</li>
+                    <li>有哪些边界情况需要处理？</li>
+                    <li>测试用例应该覆盖哪些场景？</li>
+                </ul>
+                <p>
+                    这个环节AI往往能给出很有价值的建议，因为它可以快速检索大量相关资料并总结。但记住，这只是讨论，最终决策权在你自己。
+                </p>
+
+                <h3>3. 分步执行，善用多Agent协作</h3>
+                <p>
+                    大作业需要分解。可以让不同的AI实例处理不同的模块，最后由你整合。这比让一个AI一次性生成所有代码要可靠得多。
+                </p>
+
+                <h3>4. 测试、验收、迭代</h3>
+                <p>
+                    AI生成的代码必须经过严格测试。我的习惯是：
+                </p>
+                <ol>
+                    <li>单元测试：每个函数、每个模块单独测试</li>
+                    <li>集成测试：模块之间的接口是否匹配</li>
+                    <li>边界测试：空输入、极端值、异常情况</li>
+                    <li>对比验证：用已知正确结果验证输出</li>
+                </ol>
+
+                <h3>5. 总结与交接</h3>
+                <p>
+                    作业完成后，我会记录下踩过的坑和解决方案，这些会成为下一份规范文档的输入。AI可以帮你整理会议纪要，但核心经验必须由你消化。
+                </p>
+
+                <h2>二、实战案例：从失败中学习</h2>
+
+                <div class="experience-card">
+                    <h4>案例1：ARAP网格参数化的Global Phase</h4>
+                    <p>
+                        在实现ARAP（As-Rigid-As-Possible）参数化算法时，Local Phase很顺利，但Global Phase始终无法收敛到正确结果。
+                    </p>
+                    <p>
+                        AI帮助我定位了问题：cotangent权重的符号处理。在二维参数化中，cotangent权重需要根据三角形方向取负号，而我之前直接使用了均匀权重。这不是AI直接告诉我的答案，而是它帮我排查时，我意识到Global Phase的数学本质是求解一个泊松方程，而权重决定了方程的系数。
+                    </p>
+                    <p>
+                        另一个教训是2n×2n稀疏矩阵的构建。ARAP的Global Phase需要构建一个大型稀疏线性系统，我最初的想法是用稠密矩阵，但内存直接爆了。AI建议我使用Eigen的稀疏矩阵求解器，但前提是我必须理解矩阵的结构——2n×2n是因为每个顶点有(u,v)两个坐标。
+                    </p>
+                    <div class="lesson">
+                        <strong>教训</strong>：AI能帮你诊断症状，但无法替你理解数学原理。如果不懂ARAP的数学基础，你甚至不知道该问什么问题。
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <h4>案例2：路径追踪渲染器的白屏问题</h4>
+                    <p>
+                        这是一个让我印象深刻的调试经历。渲染器编译通过，运行也没有报错，但画面一片空白。
+                    </p>
+                    <p>
+                        我首先怀疑是光照模型的问题，但AI建议我检查渲染管线的各个环节：从相机设置到光线生成，从光线-物体求交到着色计算，从像素累积到输出。经过逐层排查，发现是光线与三角形求交的代码有一个边界条件处理错误——当光线与三角形共面时，返回了错误的交点。
+                    </p>
+                    <p>
+                        更重要的是，AI帮我建立了调试的系统性思维：不是凭直觉乱试，而是建立假设-验证的循环。这其实是所有调试工作的本质，只是AI帮我把这个过程显式化了。
+                    </p>
+                    <div class="lesson">
+                        <strong>教训</strong>：调试能力无法被AI替代，但AI可以教你更系统的调试方法。关键是你要知道有哪些环节需要检查。
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <h4>案例3：数值分析作业的公式推导</h4>
+                    <p>
+                        数学作业中有一道题要求推导龙贝格积分的误差展开式。我让AI帮我推导，它很快给出了一个看起来很漂亮的公式。
+                    </p>
+                    <p>
+                        但当我把公式代入程序验证时，发现结果不对。最后发现是AI在一个符号上犯了错误——某个系数应该是-1/90而不是1/90。数学公式中的符号极其敏感，一个符号错误可能导致整个推导失败。
+                    </p>
+                    <div class="lesson">
+                        <strong>教训</strong>：对于数学推导，AI可以作为思路参考，但每个系数、每个符号都必须人工验证。数学不是语言生成，容不得半点模糊。
+                    </div>
+                </div>
+
+                <h2>三、AI辅助编程的边界</h2>
+                <p>
+                    经过这些实践，我总结出AI在编程中的几个明确边界：
+                </p>
+
+                <div class="highlight-box">
+                    <p><strong>AI擅长的</strong></p>
+                    <ul>
+                        <li>重复性代码生成（如getter/setter、单元测试框架）</li>
+                        <li>语法和API的快速查询</li>
+                        <li>代码重构和风格统一</li>
+                        <li>Bug模式识别和常见错误排查</li>
+                        <li>文档和注释生成</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box warning">
+                    <p><strong>AI需要谨慎使用的</strong></p>
+                    <ul>
+                        <li>复杂算法的数学推导——必须人工验证每一步</li>
+                        <li>涉及物理意义或工程约束的实现——AI可能忽略现实条件</li>
+                        <li>与外部系统或硬件的接口——容易产生"幻觉"代码</li>
+                        <li>性能优化——需要benchmark验证，不能盲目相信AI的建议</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box success">
+                    <p><strong>AI基本无法胜任的</strong></p>
+                    <ul>
+                        <li>真正的系统设计——需要领域知识和业务理解</li>
+                        <li>架构决策——trade-off分析需要经验积累</li>
+                        <li>原创性研究——AI只能重组现有知识，无法创造新知识</li>
+                        <li>调试时的问题定位——需要理解系统的整体行为</li>
+                    </ul>
+                </div>
+
+                <h2>四、核心观点：AI是起搏器，不是自动驾驶</h2>
+                <p>
+                    这个比喻来自医学：起搏器可以帮助心脏维持正常的节律，但它只是辅助设备，最终的生命决策仍然由人做出。AI在编程中的作用与此类似——它可以帮助你维持开发节奏、减少重复劳动、提供思路参考，但它无法替你做核心的设计决策和质量把关。
+                </p>
+                <p>
+                    <strong>人必须保持对代码的最终审查权</strong>。这不是傲慢，而是责任。你写的代码出了bug，最终承担责任的是你，而不是AI。
+                </p>
+                <p>
+                    具体来说，这意味着：
+                </p>
+                <ol>
+                    <li>永远不要提交你没有理解过的代码</li>
+                    <li>对AI生成的结果保持质疑态度，主动寻找反例</li>
+                    <li>建立自己的知识体系，这样才知道AI说的是否有道理</li>
+                    <li>把AI当作一个知识渊博但不可靠的同事，而不是真理的来源</li>
+                </ol>
+
+                <h2>五、展望：与AI共舞</h2>
+                <p>
+                    AI辅助编程不是一种技术，更是一种工作方式。它要求我们具备更强的元认知能力——知道自己知道什么、不知道什么，知道AI能做什么、不能做什么。
+                </p>
+                <p>
+                    作为数学科学学院的学生，我深刻体会到：<strong>扎实的数学基础和算法理解是使用好AI的前提</strong>。一个完全不懂ARAP原理的人，即使有AI帮助，也很难完成这个作业；一个不懂路径追踪的人，面对渲染器的白屏问题会完全束手无策。
+                </p>
+                <p>
+                    AI会越来越强大，但人必须变得更强——不是因为要与AI竞争，而是因为只有更强的人才能真正用好AI。
+                </p>
+
+                <blockquote>
+                    AI是好的起搏器，但绝不是自动驾驶。保持警惕，保持学习，保持对代码的敬畏。
+                </blockquote>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mailto:2975552601@qq.com">
+                    <span>📧</span>
+                    <span>联系我</span>
+                </a>
+                <a href="../index.html">
+                    <span>🏠</span>
+                    <span>返回主页</span>
+                </a>
+            </div>
+            <p class="footer-copyright">
+                © 2026 李翊 · 中国科学技术大学 · 数学科学学院
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

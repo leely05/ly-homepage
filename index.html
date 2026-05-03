@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李翊 - 个人主页 | 中国科学技术大学</title>
+    <meta name="description" content="李翊的个人主页，中国科学技术大学数学科学学院学生，专注数值分析、计算机图形学与科学计算">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="nav-logo">李翊</a>
+            <ul class="nav-links">
+                <li><a href="#about">关于</a></li>
+                <li><a href="#interests">方向</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#blog">博客</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <h1>李翊</h1>
+            <p class="hero-subtitle">中国科学技术大学 · 数学科学学院 · 信息与计算科学</p>
+            <div class="hero-info">
+                <div class="hero-info-item">
+                    <span>📧</span>
+                    <a href="mailto:2975552601@qq.com" style="color: white;">2975552601@qq.com</a>
+                </div>
+                <div class="hero-info-item">
+                    <span>🎓</span>
+                    <span>大三 · 2023级</span>
+                </div>
+                <div class="hero-info-item">
+                    <span>📍</span>
+                    <span>安徽合肥</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习方向 -->
+    <section class="interests" id="interests">
+        <div class="container">
+            <h2 class="section-title">学习方向</h2>
+            <p class="section-subtitle">探索计算科学的交叉领域，从理论到实现</p>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">📐</div>
+                    <h3>数值分析与计算数学</h3>
+                    <p>数值代数、微分方程数值解、函数逼近与优化算法</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🎨</div>
+                    <h3>计算机图形学</h3>
+                    <p>光栅化渲染、路径追踪、物理仿真与真实感绘制</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🔬</div>
+                    <h3>科学计算与仿真</h3>
+                    <p>大规模科学计算、高性能数值模拟、系统建模</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🤖</div>
+                    <h3>AI辅助编程</h3>
+                    <p>AI Agent工作流、代码生成与调试、科学计算中的AI应用</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 兴趣爱好 -->
+    <section class="hobbies" id="hobbies">
+        <div class="container">
+            <h2 class="section-title">兴趣爱好</h2>
+            <p class="section-subtitle">学习之余的生活调味剂</p>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">🥁</div>
+                    <h3>爵士鼓</h3>
+                    <p>八级认证</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🏸</div>
+                    <h3>羽毛球</h3>
+                    <p>享受运动乐趣</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">课程作业与科研</h2>
+            <p class="section-subtitle">课堂所学付诸实践，科研探索拓展边界</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">⬡</div>
+                        <h3 class="project-title">网格参数化算法实现</h3>
+                    </div>
+                    <p class="project-meta">
+                        <span class="meta-badge">课程作业</span>
+                    </p>
+                    <p class="project-description">
+                        基于 OpenMesh 实现多种网格参数化算法，包括 Tutte、ARAP、ASAP 及 Hybrid 方法。使用 Eigen 求解稀疏线性系统，支持 cotangent 权重和均匀权重的灵活切换。ARAP 算法通过双坐标拉普拉斯矩阵构建，实现高效的局部旋转与全局松弛两阶段优化。
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">OpenMesh</span>
+                        <span class="tag">Eigen</span>
+                        <span class="tag">计算机图形学</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">◉</div>
+                        <h3 class="project-title">光栅化与路径追踪渲染器</h3>
+                    </div>
+                    <p class="project-meta">
+                        <span class="meta-badge">课程作业</span>
+                    </p>
+                    <p class="project-description">
+                        基于 Ruzino 框架构建完整渲染管线，实现 Blinn-Phong 光照、Shadow Mapping、PCSS 软阴影与 SSAO 环境遮蔽。路径追踪模块采用蒙特卡洛积分采样，配合俄罗斯轮盘赌技巧实现无偏光照估计，支持多种材质与复杂场景的真实感绘制。
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">OpenGL</span>
+                        <span class="tag">路径追踪</span>
+                        <span class="tag">物理渲染</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">∫</div>
+                        <h3 class="project-title">龙贝格积分算法</h3>
+                    </div>
+                    <p class="project-meta">
+                        <span class="meta-badge">课程作业</span>
+                    </p>
+                    <p class="project-description">
+                        实现高精度 Romberg 积分算法，支持奇异点处理与无穷区间积分。采用 Richardson 外推加速收敛，配合自适应区间细分策略。算法可处理端点奇异性、对数奇异性等复杂情况，适用于物理与工程中的定积分计算。
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">数值分析</span>
+                        <span class="tag">科学计算</span>
+                        <span class="tag">数值积分</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">⚗</div>
+                        <h3 class="project-title">飞行时间质谱研究</h3>
+                    </div>
+                    <p class="project-meta">
+                        <span class="meta-badge">大学生研究计划</span>
+                        <span class="meta-badge">项目编号：20241172</span>
+                        <span class="meta-badge success">获评等级：A</span>
+                    </p>
+                    <p class="project-description">
+                        <strong>指导教师：</strong>赵龙、许鸣皋<br>
+                        <strong>研究时间：</strong>2024年12月—2025年12月<br><br>
+                        <strong>研究内容：</strong>围绕反射式飞行时间质谱（Reflectron TOF-MS）的核心物理机制，针对单反射式与双反射式两种典型结构，深入推导了实现最高分辨率条件下所需理想电场的精确数学表达式。系统推导了能量聚焦所需的均匀静电场条件，以及双反射式结构中不同电场区域的场强分布与几何尺寸的耦合方程。<br><br>
+                        <strong>使用工具：</strong>Maple（符号计算推导公式）、SIMION（电场模拟）<br>
+                        <strong>论文成果：</strong>《基于同步辐射的高分辨高灵敏反射式飞行时间质谱研制》（待发表，3/6）
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">科学研究</span>
+                        <span class="tag">质谱系统</span>
+                        <span class="tag">Maple</span>
+                        <span class="tag">SIMION</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 博客入口 -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title">技术博客</h2>
+            <p class="section-subtitle">记录学习思考，沉淀技术心得</p>
+            <div class="blog-preview">
+                <a href="blog/ai-assisted-programming.html" class="blog-card">
+                    <div class="blog-card-header">
+                        <span class="blog-badge">AI</span>
+                        <span class="blog-date">2026年5月3日</span>
+                    </div>
+                    <h3>AI辅助编程实践与思考</h3>
+                    <p>
+                        从网格参数化的ARAP算法调试，到路径追踪渲染器的白屏排查，再到数值分析作业中的公式推导，谈谈如何在实际项目中与AI协作。核心观点：AI是好的起搏器，但绝不是自动驾驶——人必须保持对代码的最终审查权。
+                    </p>
+                    <div class="blog-card-footer">
+                        <span>阅读全文</span>
+                        <span>→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mailto:2975552601@qq.com">
+                    <span>📧</span>
+                    <span>联系我</span>
+                </a>
+                <a href="blog/ai-assisted-programming.html">
+                    <span>📝</span>
+                    <span>技术博客</span>
+                </a>
+            </div>
+            <p class="footer-copyright">
+                © 2025 李翊 · 中国科学技术大学 · 数学科学学院
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
