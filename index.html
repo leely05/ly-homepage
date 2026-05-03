@@ -102,19 +102,42 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon">⬡</div>
-                        <h3 class="project-title">网格参数化算法实现</h3>
+                        <h3 class="project-title">Tutte参数化</h3>
                     </div>
                     <p class="project-meta">
                         <span class="meta-badge">课程作业</span>
+                        <span class="meta-badge">计算机图形学 HW5</span>
                     </p>
                     <p class="project-description">
-                        基于 OpenMesh 实现多种网格参数化算法，包括 Tutte、ARAP、ASAP 及 Hybrid 方法。使用 Eigen 求解稀疏线性系统，支持 cotangent 权重和均匀权重的灵活切换。ARAP 算法通过双坐标拉普拉斯矩阵构建，实现高效的局部旋转与全局松弛两阶段优化。
+                        基于 OpenMesh 实现 Tutte 参数化算法，支持方形和圆形边界映射，对比 uniform、cotangent、floater 三种权重方案的效果，并完成纹理可视化验证。
                     </p>
+                    <a href="reports/hw5.pdf" class="project-link" target="_blank">查看报告 →</a>
                     <div class="project-tags">
                         <span class="tag">C++</span>
                         <span class="tag">OpenMesh</span>
                         <span class="tag">Eigen</span>
-                        <span class="tag">计算机图形学</span>
+                        <span class="tag">参数化</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">⬡</div>
+                        <h3 class="project-title">ARAP/ASAP/Hybrid参数化</h3>
+                    </div>
+                    <p class="project-meta">
+                        <span class="meta-badge">课程作业</span>
+                        <span class="meta-badge">计算机图形学 HW6</span>
+                    </p>
+                    <p class="project-description">
+                        在 Tutte 参数化基础上实现 ARAP（保面积）、ASAP（保角）和 Hybrid 混合参数化。通过 SVD 分解计算最优旋转矩阵，迭代优化局部-全局两阶段，支持 λ 参数在保角和保面积之间权衡。
+                    </p>
+                    <a href="reports/hw6.pdf" class="project-link" target="_blank">查看报告 →</a>
+                    <div class="project-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">OpenMesh</span>
+                        <span class="tag">Eigen</span>
+                        <span class="tag">参数化</span>
                     </div>
                 </div>
 
@@ -125,10 +148,12 @@
                     </div>
                     <p class="project-meta">
                         <span class="meta-badge">课程作业</span>
+                        <span class="meta-badge">计算机图形学 HW7</span>
                     </p>
                     <p class="project-description">
-                        基于 Ruzino 框架构建完整渲染管线，实现 Blinn-Phong 光照、Shadow Mapping、PCSS 软阴影与 SSAO 环境遮蔽。路径追踪模块采用蒙特卡洛积分采样，配合俄罗斯轮盘赌技巧实现无偏光照估计，支持多种材质与复杂场景的真实感绘制。
+                        基于 Ruzino 框架构建完整渲染管线：光栅化部分实现 Blinn-Phong 光照、Shadow Mapping、PCSS 软阴影、SSAO 环境遮蔽与位移贴图；路径追踪部分采用蒙特卡洛积分采样，配合俄罗斯轮盘赌实现无偏光照估计，支持 Dome/Sphere/Rect 三种光源。
                     </p>
+                    <a href="reports/hw7.pdf" class="project-link" target="_blank">查看报告 →</a>
                     <div class="project-tags">
                         <span class="tag">C++</span>
                         <span class="tag">OpenGL</span>
@@ -139,11 +164,33 @@
 
                 <div class="project-card">
                     <div class="project-header">
+                        <div class="project-icon">🧠</div>
+                        <h3 class="project-title">RenderFormer 神经渲染</h3>
+                    </div>
+                    <p class="project-meta">
+                        <span class="meta-badge">课程作业</span>
+                        <span class="meta-badge">计算机图形学 HW8</span>
+                    </p>
+                    <p class="project-description">
+                        实现 RenderFormer 基于Transformer的神经渲染架构：Triangle Embedding、Ray Bundle Embedding、RoPE 旋转位置编码、Scaled Dot-Product Attention、Self-Attention Encoder、Cross-Attention Decoder。扩展功能包括窗口注意力、分批视角渲染和动态光源编码，训练至 PSNR 达 29.10 dB。
+                    </p>
+                    <a href="reports/hw8.pdf" class="project-link" target="_blank">查看报告 →</a>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Transformer</span>
+                        <span class="tag">神经渲染</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
                         <div class="project-icon">∫</div>
                         <h3 class="project-title">龙贝格积分算法</h3>
                     </div>
                     <p class="project-meta">
                         <span class="meta-badge">课程作业</span>
+                        <span class="meta-badge">数值分析</span>
                     </p>
                     <p class="project-description">
                         实现高精度 Romberg 积分算法，支持奇异点处理与无穷区间积分。采用 Richardson 外推加速收敛，配合自适应区间细分策略。算法可处理端点奇异性、对数奇异性等复杂情况，适用于物理与工程中的定积分计算。
@@ -169,10 +216,11 @@
                     <p class="project-description">
                         <strong>指导教师：</strong>赵龙、许鸣皋<br>
                         <strong>研究时间：</strong>2024年12月—2025年12月<br><br>
-                        <strong>研究内容：</strong>围绕反射式飞行时间质谱（Reflectron TOF-MS）的核心物理机制，针对单反射式与双反射式两种典型结构，深入推导了实现最高分辨率条件下所需理想电场的精确数学表达式。系统推导了能量聚焦所需的均匀静电场条件，以及双反射式结构中不同电场区域的场强分布与几何尺寸的耦合方程。<br><br>
-                        <strong>使用工具：</strong>Maple（符号计算推导公式）、SIMION（电场模拟）<br>
+                        围绕反射式飞行时间质谱的核心物理机制，针对单反射式与双反射式两种典型结构，深入推导了实现最高分辨率条件下所需理想电场的精确数学表达式。系统推导了能量聚焦所需的均匀静电场条件，以及双反射式结构中不同电场区域的场强分布与几何尺寸的耦合方程。<br><br>
+                        <strong>使用工具：</strong>Maple（符号计算）、SIMION（电场模拟）<br>
                         <strong>论文成果：</strong>《基于同步辐射的高分辨高灵敏反射式飞行时间质谱研制》（待发表，3/6）
                     </p>
+                    <a href="reports/大研报告.docx" class="project-link" target="_blank">查看报告 →</a>
                     <div class="project-tags">
                         <span class="tag">科学研究</span>
                         <span class="tag">质谱系统</span>

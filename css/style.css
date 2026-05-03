@@ -263,6 +263,21 @@ a:hover {
     line-height: 1.7;
 }
 
+.project-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
